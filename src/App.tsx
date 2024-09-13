@@ -1,23 +1,8 @@
-import {
-  Navbar,
-  Collapse,
-  Button,
-  IconButton,
-  Typography,
-  Input,
-} from "@material-tailwind/react";
-
-import {
-  RectangleStackIcon,
-  UserCircleIcon,
-  CommandLineIcon,
-  Squares2X2Icon,
-} from "@heroicons/react/24/solid";
-
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-
-import { useNavigate } from "react-router";
 import { useEffect, useState } from "react";
+import { CommandLineIcon, RectangleStackIcon, Squares2X2Icon, UserCircleIcon } from "@heroicons/react/24/solid";
+import { Button, Collapse, IconButton, Input, Navbar, Typography } from "@material-tailwind/react";
+import { useNavigate } from "react-router";
 
 interface NavItemPropsType {
   children: React.ReactNode;
@@ -47,10 +32,7 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpen(false)
-    );
+    window.addEventListener("resize", () => window.innerWidth >= 960 && setOpen(false));
   }, []);
 
   const handleOnLoginClick = () => {
@@ -63,18 +45,9 @@ function App() {
 
   return (
     <>
-      <Navbar
-        placeholder={undefined}
-        shadow={false}
-        fullWidth
-        className="border-0"
-      >
+      <Navbar placeholder={undefined} shadow={false} fullWidth className="border-0">
         <div className="container mx-auto flex items-center justify-between">
-          <Typography
-            placeholder={undefined}
-            color="blue-gray"
-            className="text-lg font-bold"
-          >
+          <Typography placeholder={undefined} color="blue-gray" className="text-lg font-bold">
             Material Tailwind
           </Typography>
           <ul className="ml-10 hidden items-center gap-6 lg:flex">
@@ -96,11 +69,7 @@ function App() {
             </NavItem>
           </ul>
           <div className="hidden items-center gap-4 lg:flex">
-            <Button
-              placeholder={undefined}
-              variant="text"
-              onClick={handleOnLoginClick}
-            >
+            <Button placeholder={undefined} variant="text" onClick={handleOnLoginClick}>
               Log in
             </Button>
             <Button placeholder={undefined} color="gray">
@@ -142,18 +111,10 @@ function App() {
               </NavItem>
             </ul>
             <div className="mt-6 mb-4 flex items-center gap-4">
-              <Button
-                placeholder={undefined}
-                variant="text"
-                onClick={handleOnLoginClick}
-              >
+              <Button placeholder={undefined} variant="text" onClick={handleOnLoginClick}>
                 Log in
               </Button>
-              <Button
-                placeholder={undefined}
-                color="gray"
-                onClick={handleOnRegisterClick}
-              >
+              <Button placeholder={undefined} color="gray" onClick={handleOnRegisterClick}>
                 buy now
               </Button>
             </div>
@@ -175,19 +136,15 @@ function App() {
               color="blue-gray"
               className="mx-auto my-6 w-full leading-snug  !text-2xl lg:max-w-3xl lg:!text-5xl"
             >
-              Get ready to experience a new level of{" "}
-              <span className="text-green-500 leading-snug ">performance</span>{" "}
-              and{" "}
-              <span className="leading-snug text-green-500">functionality</span>
-              .
+              Get ready to experience a new level of <span className="text-green-500 leading-snug ">performance</span>{" "}
+              and <span className="leading-snug text-green-500">functionality</span>.
             </Typography>
             <Typography
               placeholder={undefined}
               variant="lead"
               className="mx-auto w-full !text-gray-500 lg:text-lg text-base"
             >
-              The time is now for it to be okay to be great. For being a bright
-              color. For standing out.
+              The time is now for it to be okay to be great. For being a bright color. For standing out.
             </Typography>
             <div className="mt-8 grid w-full place-items-start md:justify-center">
               <div className="mb-2 flex w-full flex-col gap-4 md:flex-row">
@@ -198,11 +155,7 @@ function App() {
                   label="Enter your email"
                   size="lg"
                 />
-                <Button
-                  placeholder={undefined}
-                  color="gray"
-                  className="w-full px-4 md:w-[12rem]"
-                >
+                <Button placeholder={undefined} color="gray" className="w-full px-4 md:w-[12rem]">
                   get started
                 </Button>
               </div>
