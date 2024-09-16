@@ -1,9 +1,7 @@
-import { Outlet } from "react-router";
+import { Outlet } from 'react-router';
 
 type Props = {};
 
-const AuthLayout = (props: Props) => {
+export const AuthLayout = (props: Props) => {
   return <Outlet />;
 };
-
-export default AuthLayout;

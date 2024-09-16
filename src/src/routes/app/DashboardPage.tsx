@@ -1,22 +1,36 @@
 import { Button } from "@material-tailwind/react";
-import { account } from "../../api/app-write";
+import { Models } from "appwrite";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { account } from "../../api/app-write";
 
 type Props = {};
 
-const DashboardPage = (props: Props) => {
+export const DashboardPage = (props: Props) => {
   const navigate = useNavigate();
+
+  const [session, setSession] = useState<Models.Session>();
 
   const handleOnLogOutClick = async () => {
     await account.deleteSession("current");
     navigate("/login");
   };
 
+  useEffect(() => {
+    const getAccountSession = async () => {
+      const currentSession = await account.getSession("current");
+      setSession(currentSession);
+    };
+
+    getAccountSession();
+  }, []);
+
   return (
-    <Button placeholder={undefined} onClick={handleOnLogOutClick}>
-      Logout
-    </Button>
+    <>
+      <Button placeholder={undefined} onClick={handleOnLogOutClick}>
+        Logout
+      </Button>
+      <pre>{JSON.stringify(session, null, 2)}</pre>
+    </>
   );
 };
-
-export default DashboardPage;

@@ -1,11 +1,7 @@
-import { BrowserRouter, Route, Routes } from "react-router";
-import AuthLayout from "./auth/layout/AuthLayout";
-import App from "../../App";
-import LoginPage from "./auth/LoginPage";
-import RegisterPage from "./auth/RegisterPage";
-import AppLayout from "./app/layout/AppLayout";
-import DashboardPage from "./app/DashboardPage";
-import ProfilePage from "./app/ProfilePage";
+import { BrowserRouter, Route, Routes } from 'react-router';
+import App from '../../App';
+import { AppLayout, DashboardPage, ProfilePage } from './app';
+import { AuthLayout, LoginPage, RegisterPage } from './auth';
 
 type Props = {};
 
