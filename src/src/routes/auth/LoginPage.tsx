@@ -36,6 +36,10 @@ export const LoginPage = (props: Props) => {
     setValue,
   } = useForm<LoginFormInputs>({
     resolver: yupResolver(loginFormSchema),
+    defaultValues: {
+      email: 'test@user.com',
+      password: 'TestUser',
+    },
   });
 
   const onSubmit: SubmitHandler<LoginFormInputs> = async (data) => {
