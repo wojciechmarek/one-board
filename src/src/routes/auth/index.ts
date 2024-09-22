@@ -1,3 +1,2 @@
-export * from './LoginPage';
-export * from './RegisterPage';
-export * from './layout/AuthLayout';
+export * from './layout';
+export * from './pages';

@@ -1,8 +1,9 @@
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { useEffect, useState } from "react";
-import { CommandLineIcon, RectangleStackIcon, Squares2X2Icon, UserCircleIcon } from "@heroicons/react/24/solid";
-import { Button, Collapse, IconButton, Input, Navbar, Typography } from "@material-tailwind/react";
-import { useNavigate } from "react-router";
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { CommandLineIcon, RectangleStackIcon, Squares2X2Icon, UserCircleIcon } from '@heroicons/react/24/solid';
+import { Button, Collapse, IconButton, Input, Navbar, Typography } from '@material-tailwind/react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
+import { account } from './src/api/app-write';
 
 interface NavItemPropsType {
   children: React.ReactNode;
@@ -32,16 +33,32 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    window.addEventListener("resize", () => window.innerWidth >= 960 && setOpen(false));
+    window.addEventListener('resize', () => window.innerWidth >= 960 && setOpen(false));
   }, []);
 
-  const handleOnLoginClick = () => {
-    navigate("login");
+  const handleOnLoginOrLaunchClick = () => {
+    if (isLoggedIn) {
+      navigate('/dashboard');
+      return;
+    }
+
+    navigate('login');
   };
 
   const handleOnRegisterClick = () => {
-    navigate("register");
+    navigate('register');
   };
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const getAccountSession = async () => {
+      const currentSession = await account.getSession('current');
+      setIsLoggedIn(!!currentSession);
+    };
+
+    getAccountSession();
+  }, []);
 
   return (
     <>
@@ -69,8 +86,8 @@ function App() {
             </NavItem>
           </ul>
           <div className="hidden items-center gap-4 lg:flex">
-            <Button placeholder={undefined} variant="text" onClick={handleOnLoginClick}>
-              Log in
+            <Button placeholder={undefined} variant="text" onClick={handleOnLoginOrLaunchClick}>
+              {isLoggedIn ? 'Launch app' : 'Log in'}
             </Button>
             <Button placeholder={undefined} color="gray">
               buy now
@@ -111,8 +128,8 @@ function App() {
               </NavItem>
             </ul>
             <div className="mt-6 mb-4 flex items-center gap-4">
-              <Button placeholder={undefined} variant="text" onClick={handleOnLoginClick}>
-                Log in
+              <Button placeholder={undefined} variant="text" onClick={handleOnLoginOrLaunchClick}>
+                {isLoggedIn ? 'Launch app' : 'Log in'}
               </Button>
               <Button placeholder={undefined} color="gray" onClick={handleOnRegisterClick}>
                 buy now
@@ -136,7 +153,7 @@ function App() {
               color="blue-gray"
               className="mx-auto my-6 w-full leading-snug  !text-2xl lg:max-w-3xl lg:!text-5xl"
             >
-              Get ready to experience a new level of <span className="text-green-500 leading-snug ">performance</span>{" "}
+              Get ready to experience a new level of <span className="text-green-500 leading-snug ">performance</span>{' '}
               and <span className="leading-snug text-green-500">functionality</span>.
             </Typography>
             <Typography

@@ -1,3 +1,2 @@
-export * from './DashboardPage';
-export * from './ProfilePage';
-export * from './layout/AppLayout';
+export * from './layout';
+export * from './pages';

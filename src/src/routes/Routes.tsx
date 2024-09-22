@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
 import App from '../../App';
-import { AppLayout, DashboardPage, ProfilePage } from './app';
+import { AppLayout, CrudListPage, DashboardPage, FunctionsPage, ProfilePage } from './app';
 import { AuthLayout, LoginPage, RegisterPage } from './auth';
 
 type Props = {};
@@ -19,6 +19,8 @@ const AppRoutes = (props: Props) => {
         <Route element={<AppLayout />}>
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="profile" element={<ProfilePage />} />
+          <Route path="crud-list" element={<CrudListPage />} />
+          <Route path="functions" element={<FunctionsPage />} />
           {/* <Route path=":city" element={<City />} />
             <Route path="trending" element={<Trending />} /> */}
         </Route>

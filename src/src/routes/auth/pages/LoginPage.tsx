@@ -4,7 +4,7 @@ import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid';
 import { Button, Input, Typography } from '@material-tailwind/react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
-import { account } from '../../api/app-write';
+import { account } from '../../../api/app-write';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';

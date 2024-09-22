@@ -2,7 +2,7 @@ import { Button, Collapse, IconButton, Navbar, Typography } from '@material-tail
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useEffect, useState } from 'react';
-import { Outlet, useNavigate } from 'react-router';
+import { Link, Outlet, useNavigate } from 'react-router';
 import { account } from '../../../api/app-write';
 
 type Props = {};
@@ -11,14 +11,14 @@ function NavList() {
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography placeholder={undefined} as="li" variant="small" color="blue-gray" className="p-1 font-medium">
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
-          Pages
-        </a>
+        <Link to={'/crud-list'} className="flex items-center hover:text-blue-500 transition-colors">
+          Crud list
+        </Link>
       </Typography>
       <Typography placeholder={undefined} as="li" variant="small" color="blue-gray" className="p-1 font-medium">
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
-          Account
-        </a>
+        <Link to={'/functions'} className="flex items-center hover:text-blue-500 transition-colors">
+          Functions
+        </Link>
       </Typography>
       <Typography placeholder={undefined} as="li" variant="small" color="blue-gray" className="p-1 font-medium">
         <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
@@ -61,9 +61,11 @@ export const AppLayout = (props: Props) => {
     <>
       <Navbar placeholder={undefined} className="mx-auto max-w-screen-xl px-6 py-3">
         <div className="flex items-center justify-between text-blue-gray-900">
-          <Typography placeholder={undefined} as="a" href="#" variant="h6" className="mr-4 cursor-pointer py-1.5">
-            App Write Demo
-          </Typography>
+          <Link to={'/'}>
+            <Typography placeholder={undefined} as="a" href="#" variant="h6" className="mr-4 cursor-pointer py-1.5">
+              App Write Demo
+            </Typography>
+          </Link>
           <div className="hidden lg:block">
             <NavList />
           </div>
@@ -105,7 +107,9 @@ export const AppLayout = (props: Props) => {
           <NavList />
         </Collapse>
       </Navbar>
-      <Outlet />
+      <main className="mx-auto max-w-screen-xl px-6 py-3">
+        <Outlet />
+      </main>
     </>
   );
 };
