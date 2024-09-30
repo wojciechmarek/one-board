@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid';
 import { Button, Input, Typography } from '@material-tailwind/react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { account } from '../../../api/app-write';
 
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -31,7 +31,6 @@ export const LoginPage = (props: Props) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
     setValue,
   } = useForm<LoginFormInputs>({
@@ -59,7 +58,6 @@ export const LoginPage = (props: Props) => {
     if (session) {
       setIsSingInButtonLoading(false);
       navigate('/dashboard');
-      return;
     }
   };
 
@@ -160,9 +158,9 @@ export const LoginPage = (props: Props) => {
           </Button>
           <Typography placeholder={undefined} variant="small" color="gray" className="!mt-4 text-center font-normal">
             Not registered?{' '}
-            <a href="#" className="font-medium text-gray-900">
+            <Link to={'/register'} className="font-medium text-gray-900">
               Create account
-            </a>
+            </Link>
           </Typography>
         </form>
       </div>
