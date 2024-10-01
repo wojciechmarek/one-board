@@ -1,15 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
-import App from '../../App';
 import { AppLayout, CrudListPage, DashboardPage, FunctionsPage, ProfilePage } from './app';
 import { AuthLayout, LoginPage, RegisterPage } from './auth';
+import { LandingPage } from './landing/LandingPage';
 
-type Props = {};
-
-const AppRoutes = (props: Props) => {
+const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<App />} />
+        <Route index element={<LandingPage />} />
 
         <Route element={<AuthLayout />}>
           <Route path="login" element={<LoginPage />} />
