@@ -6,10 +6,10 @@ export const HomeSection = () => {
   return (
     <section id="home" className="mx-auto max-w-7xl">
       <h2 className="mx-auto mb-6 mt-10 max-w-3xl text-center text-5xl font-bold">
-        Next-gen investing app
+        Next generation backend service
         <br />
         <span className="bg-gradient-to-r from-red-500 to-blue-900 bg-clip-text text-transparent">
-          for modern investors
+          for modern developers
         </span>
       </h2>
       <h3 className="mx-auto max-w-3xl text-center text-xl font-medium">
