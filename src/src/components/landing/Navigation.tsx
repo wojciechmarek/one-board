@@ -1,6 +1,6 @@
-import brandLogo from 'src/src/assets/brand/certificate-svgrepo-com.svg';
+import brandLogo from 'src/src/assets/icons/certificate-svgrepo-com.svg';
 
-export const NavigationBar = () => {
+export const Navigation = () => {
   return (
     <header className="mx-auto flex max-w-7xl items-center p-6">
       <a href="/" className="flex items-center gap-2">

@@ -1,6 +1,9 @@
+import applicationDemo from 'src/src/assets/images/application-demo.webp';
+import binance from 'src/src/assets/logos/binance.svg';
 import facebook from 'src/src/assets/logos/facebook.svg';
-import google from 'src/src/assets/logos/google-cloud.svg';
+import googleCloud from 'src/src/assets/logos/google-cloud.svg';
 import microsoft from 'src/src/assets/logos/microsoft.svg';
+import spotify from 'src/src/assets/logos/spotify.svg';
 
 export const HomeSection = () => {
   return (
@@ -15,7 +18,7 @@ export const HomeSection = () => {
       <h3 className="mx-auto max-w-3xl text-center text-xl font-medium">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur pariatur ullam quibusdam repudiandae earum.
       </h3>
-      <div className="mt-8 flex flex-row justify-center gap-12">
+      <div className="mt-16 flex flex-row justify-center gap-12">
         <a className="rounded-full bg-gradient-to-r from-red-500 to-blue-900 px-9 py-4 font-bold" href="/sign-up">
           Get started
         </a>
@@ -23,11 +26,13 @@ export const HomeSection = () => {
           Browse features
         </a>
       </div>
-      <div className="mx-auto mt-16 h-56 w-96 bg-red-400">image</div>
+      <img src={applicationDemo} alt="application demo layout" className="mx-auto mt-16 h-96 bg-red-400" />
       <div className="mx-auto mt-16 flex flex-row justify-center gap-24">
-        <img src={facebook} alt="" className="h-8" />
-        <img src={google} alt="" className="h-8" />
-        <img src={microsoft} alt="" className="h-8" />
+        <img src={facebook} alt="" className="h-6" />
+        <img src={googleCloud} alt="" className="h-6" />
+        <img src={microsoft} alt="" className="h-6" />
+        <img src={binance} alt="" className="h-6" />
+        <img src={spotify} alt="" className="h-6" />
       </div>
     </section>
   );
