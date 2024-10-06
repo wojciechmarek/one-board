@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import brandLogo from 'src/src/assets/icons/certificate-svgrepo-com.svg';
 
 export const Navigation = () => {
@@ -24,8 +25,8 @@ export const Navigation = () => {
         </ul>
       </nav>
       <div className="flex items-center gap-4">
-        <a href="login">Sign up</a>
-        <a href="login">Sign in</a>
+        <Link to="/sign-up">Sign up</Link>
+        <Link to="/sign-in">Sign in</Link>
       </div>
     </header>
   );

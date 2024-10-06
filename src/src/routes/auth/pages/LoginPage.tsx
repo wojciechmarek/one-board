@@ -7,9 +7,8 @@ import { Link, useNavigate } from 'react-router';
 import { account } from '../../../api/app-write';
 
 import { yupResolver } from '@hookform/resolvers/yup';
+import { toast } from 'react-toastify';
 import * as yup from 'yup';
-
-type Props = {};
 
 type LoginFormInputs = {
   email: string;
@@ -17,13 +16,17 @@ type LoginFormInputs = {
 };
 
 const loginFormSchema = yup.object().shape({
-  email: yup.string().email('wrong format').required('required'),
-  password: yup.string().min(8).max(32).required('required'),
+  email: yup.string().email('E-mail has wrong format').required('E-mail address is required'),
+  password: yup
+    .string()
+    .min(8, 'Password must be at least 8 characters')
+    .max(128, 'Password must be at less than 128 characters')
+    .required('Password is required'),
 });
 
-export const LoginPage = (props: Props) => {
+export const LoginPage = () => {
   const [passwordShown, setPasswordShown] = useState(false);
-  const togglePasswordVisiblity = () => setPasswordShown((cur) => !cur);
+  const togglePasswordVisibility = () => setPasswordShown((cur) => !cur);
   const [isSingInButtonLoading, setIsSingInButtonLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -52,7 +55,7 @@ export const LoginPage = (props: Props) => {
       setIsSingInButtonLoading(false);
       setValue('password', '');
 
-      alert(JSON.stringify(error));
+      toast.error('Login failed' + error);
     }
 
     if (session) {
@@ -62,103 +65,91 @@ export const LoginPage = (props: Props) => {
   };
 
   return (
-    <section className="grid text-center h-screen items-center p-8">
-      <div>
-        <Typography placeholder={undefined} variant="h3" color="blue-gray" className="mb-2">
+    <section className="grid h-screen">
+      <div className="w-96 place-self-center rounded-xl bg-white p-8 text-teal-200">
+        <Typography variant="h3" color="blue-gray" className="mb-2">
           Sign In
         </Typography>
-        <Typography placeholder={undefined} className="mb-16 text-gray-600 font-normal text-[18px]">
-          Enter your email and password to sign in
-        </Typography>
-        <form className="mx-auto max-w-[24rem] text-left" onSubmit={handleSubmit(onSubmit)}>
-          <div className="mb-6">
+        <form className="mx-auto text-left" onSubmit={handleSubmit(onSubmit)}>
+          <div className="mt-6">
             <label htmlFor="email">
-              <Typography placeholder={undefined} variant="small" className="mb-2 block font-medium text-gray-900">
-                Your Email
+              <Typography className="block text-xs font-bold text-gray-900">
+                E-mail <span className="text-red-500">*</span>
               </Typography>
             </label>
             <Input
               {...register('email')}
               error={!!errors.email?.message}
-              crossOrigin={undefined}
-              id="email"
-              color="gray"
-              size="lg"
               type="email"
-              name="email"
-              placeholder="name@mail.com"
-              className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
+              placeholder="Email Address"
+              className="mt-1 !border !border-gray-300 bg-white text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-500 placeholder:opacity-100 focus:!border-gray-900 focus:!border-t-gray-900 focus:ring-gray-900/10"
               labelProps={{
                 className: 'hidden',
               }}
+              containerProps={{ className: 'min-w-[100px]' }}
             />
-            <Typography placeholder={undefined} color="red" variant="small" className="font-medium">
+
+            <Typography placeholder={undefined} color="red" variant="small" className="mt-2 text-xs text-red-500">
               {errors.email?.message}
             </Typography>
           </div>
-          <div className="mb-6">
+          <div className="mt-4">
             <label htmlFor="password">
-              <Typography placeholder={undefined} variant="small" className="mb-2 block font-medium text-gray-900">
-                Password
+              <Typography className="block text-xs font-bold text-gray-900">
+                Password <span className="text-red-500">*</span>
               </Typography>
             </label>
+
             <Input
               {...register('password')}
               error={!!errors.password?.message}
-              crossOrigin={undefined}
-              size="lg"
-              placeholder="********"
+              type={passwordShown ? 'text' : 'password'}
+              placeholder="Password"
+              className="mt-1 !border !border-gray-300 bg-white text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-500 placeholder:opacity-100 focus:!border-gray-900 focus:!border-t-gray-900 focus:ring-gray-900/10"
               labelProps={{
                 className: 'hidden',
               }}
-              className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
-              type={passwordShown ? 'text' : 'password'}
+              containerProps={{ className: 'min-w-[100px]' }}
               icon={
-                <i onClick={togglePasswordVisiblity}>
+                <i onClick={togglePasswordVisibility}>
                   {passwordShown ? <EyeIcon className="h-5 w-5" /> : <EyeSlashIcon className="h-5 w-5" />}
                 </i>
               }
             />
-            <Typography placeholder={undefined} color="red" variant="small" className="font-medium">
+            <Typography placeholder={undefined} variant="small" className="mt-2 text-xs text-red-500">
               {errors.password?.message}
             </Typography>
+            <div className="mt-2 flex justify-start">
+              <Link to={'/remember-password'} className="flex justify-start text-xs text-blue-600">
+                Forgot password?
+              </Link>
+            </div>
           </div>
           <Button
             loading={isSingInButtonLoading}
             type="submit"
             placeholder={undefined}
-            color="gray"
+            color="black"
             size="lg"
             className="mt-6"
             fullWidth
           >
             sign in
           </Button>
-          <div className="!mt-4 flex justify-end">
-            <Typography
-              placeholder={undefined}
-              as="a"
-              href="#"
-              color="blue-gray"
-              variant="small"
-              className="font-medium"
-            >
-              Forgot password
-            </Typography>
-          </div>
+
           <Button
             placeholder={undefined}
             variant="outlined"
             size="lg"
-            className="mt-6 flex h-12 items-center justify-center gap-2"
+            className="mt-2 flex h-12 items-center justify-center gap-2"
             fullWidth
           >
             <img src={`https://www.material-tailwind.com/logos/logo-google.png`} alt="google" className="h-6 w-6" />{' '}
             sign in with google
           </Button>
-          <Typography placeholder={undefined} variant="small" color="gray" className="!mt-4 text-center font-normal">
+          <Typography placeholder={undefined} variant="small" color="gray" className="mt-6 text-center text-xs">
             Not registered?{' '}
-            <Link to={'/register'} className="font-medium text-gray-900">
+            <Link to={'/remember-password'} className="text-xs text-blue-600">
               Create account
             </Link>
           </Typography>

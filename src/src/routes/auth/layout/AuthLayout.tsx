@@ -1,7 +1,9 @@
 import { Outlet } from 'react-router';
 
-type Props = {};
-
-export const AuthLayout = (props: Props) => {
-  return <Outlet />;
+export const AuthLayout = () => {
+  return (
+    <body className="bg-[#13121a] text-teal-200">
+      <Outlet />
+    </body>
+  );
 };

@@ -19,7 +19,7 @@ export const HomeSection = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur pariatur ullam quibusdam repudiandae earum.
       </h3>
       <div className="mt-16 flex flex-row justify-center gap-12">
-        <a className="rounded-full bg-gradient-to-r from-red-500 to-blue-900 px-9 py-4 font-bold" href="/sign-up">
+        <a className="rounded-full bg-gradient-to-r from-red-500 to-blue-900 px-9 py-4 font-bold" href="/sign-in">
           Get started
         </a>
         <a className="rounded-full bg-gray-900 px-7 py-4 font-bold" href="#features">
