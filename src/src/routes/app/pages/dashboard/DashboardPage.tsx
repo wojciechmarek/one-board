@@ -18,6 +18,7 @@ export const DashboardPage = (props: Props) => {
   return (
     <>
       <pre>{JSON.stringify(session, null, 2)}</pre>
+      <p>hello</p>
     </>
   );
 };

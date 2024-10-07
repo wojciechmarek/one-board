@@ -1,8 +1,8 @@
-import { Button, Collapse, IconButton, Navbar, Typography } from '@material-tailwind/react';
+import { Typography } from '@material-tailwind/react';
 
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useEffect, useState } from 'react';
 import { Link, Outlet, useNavigate } from 'react-router';
+import { Navigation } from 'src/src/components/app/Navigation';
 import { account } from '../../../api/app-write';
 
 type Props = {};
@@ -11,17 +11,17 @@ function NavList() {
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography placeholder={undefined} as="li" variant="small" color="blue-gray" className="p-1 font-medium">
-        <Link to={'/dashboard'} className="flex items-center hover:text-blue-500 transition-colors">
+        <Link to={'/dashboard'} className="flex items-center transition-colors hover:text-blue-500">
           Dashboard
         </Link>
       </Typography>
       <Typography placeholder={undefined} as="li" variant="small" color="blue-gray" className="p-1 font-medium">
-        <Link to={'/crud-list'} className="flex items-center hover:text-blue-500 transition-colors">
+        <Link to={'/crud-list'} className="flex items-center transition-colors hover:text-blue-500">
           Crud list
         </Link>
       </Typography>
       <Typography placeholder={undefined} as="li" variant="small" color="blue-gray" className="p-1 font-medium">
-        <Link to={'/functions'} className="flex items-center hover:text-blue-500 transition-colors">
+        <Link to={'/functions'} className="flex items-center transition-colors hover:text-blue-500">
           Functions
         </Link>
       </Typography>
@@ -54,7 +54,7 @@ export const AppLayout = (props: Props) => {
   };
   return (
     <>
-      <Navbar placeholder={undefined} className="mx-auto max-w-screen-xl px-6 py-3">
+      {/* <Navbar placeholder={undefined} className="mx-auto max-w-screen-xl px-6 py-3">
         <div className="flex items-center justify-between text-blue-gray-900">
           <Link to={'/'}>
             <Typography placeholder={undefined} as="a" href="#" variant="h6" className="mr-4 cursor-pointer py-1.5">
@@ -101,10 +101,11 @@ export const AppLayout = (props: Props) => {
         <Collapse open={openNav}>
           <NavList />
         </Collapse>
-      </Navbar>
-      <main className="mx-auto max-w-screen-xl px-6 py-3">
+      </Navbar> */}
+      <body className="flex flex-row bg-[#323232] text-teal-200">
+        <Navigation />
         <Outlet />
-      </main>
+      </body>
     </>
   );
 };
