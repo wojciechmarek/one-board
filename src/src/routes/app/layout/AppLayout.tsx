@@ -2,7 +2,8 @@ import { Typography } from '@material-tailwind/react';
 
 import { useEffect, useState } from 'react';
 import { Link, Outlet, useNavigate } from 'react-router';
-import { Navigation } from 'src/src/components/app/Navigation';
+import Header from 'src/src/components/app/Header';
+import { SideBar } from 'src/src/components/app/SideBar';
 import { account } from '../../../api/app-write';
 
 type Props = {};
@@ -103,8 +104,11 @@ export const AppLayout = (props: Props) => {
         </Collapse>
       </Navbar> */}
       <body className="flex flex-row bg-[#323232] text-teal-200">
-        <Navigation />
-        <Outlet />
+        <SideBar />
+        <main className="flex-grow">
+          <Header />
+          <Outlet />
+        </main>
       </body>
     </>
   );

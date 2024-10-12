@@ -13,7 +13,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { Button, Chip, Progress } from '@material-tailwind/react';
 
-export const Navigation = () => {
+export const SideBar = () => {
   const mainMenuItems = [driveIcon, driveIcon, driveIcon, driveIcon];
 
   const secondaryMenuItems = [
@@ -24,15 +24,15 @@ export const Navigation = () => {
     { name: 'Overview', icon: <PlusCircleIcon /> },
   ];
   return (
-    <header className="flex h-screen w-72 flex-col bg-[#1c1a25]">
+    <aside className="flex h-screen w-72 flex-col bg-[#1c1a25]">
       <div className="flex flex-grow flex-row">
-        <div className="w-16 border-r-2 border-[#323232]">
+        <nav className="w-16 border-r-2 border-[#323232]">
           {mainMenuItems.map((item) => (
             <div className="grid h-16 border-b-2 border-[#323232] hover:cursor-pointer hover:bg-[#282631]">
               <img src={item} className="h-6 w-6 place-self-center" />
             </div>
           ))}
-        </div>
+        </nav>
         <div className="flex w-16 flex-grow flex-col">
           <div className="mx-4 flex h-16 flex-row content-center justify-between">
             <a href="/" className="flex items-center gap-2">
@@ -51,7 +51,7 @@ export const Navigation = () => {
               <EllipsisHorizontalIcon />
             </div>
           </div>
-          <div className="mt-3 flex flex-grow flex-col gap-1 px-2">
+          <nav className="mt-3 flex flex-grow flex-col gap-1 px-2">
             {secondaryMenuItems.map((item) => (
               <div className="flex flex-row justify-between rounded-lg px-3 py-2 hover:cursor-pointer hover:bg-[#282631]">
                 <div className="flex flex-row items-center gap-2">
@@ -63,7 +63,7 @@ export const Navigation = () => {
                 <Chip variant="gradient" size="sm" value="12" color="red" />
               </div>
             ))}
-          </div>
+          </nav>
           <div className="mx-6 mb-6 h-36 rounded-2xl bg-gradient-to-tr from-[#6e4fe4] to-[#ac73ec] p-4">
             <h6 className="text-xs font-bold text-white">Cloud storage</h6>
             <Progress value={50} color="amber" size="sm" className="mt-2" />
@@ -80,6 +80,6 @@ export const Navigation = () => {
           </div>
         </div>
       </div>
-    </header>
+    </aside>
   );
 };
