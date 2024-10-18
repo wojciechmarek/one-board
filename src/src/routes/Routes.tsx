@@ -15,7 +15,13 @@ const AppRoutes = () => {
         </Route>
 
         <Route element={<AppLayout />}>
-          <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="portfolio" element={<DashboardPage />}>
+            <Route index element={<p>overview</p>} />
+            <Route path="assets" element={<p>assets</p>} />
+            <Route path="transactions" element={<p>transactions</p>} />
+            <Route path="history" element={<p>history</p>} />
+            <Route path="settings" element={<p>settings</p>} />
+          </Route>
           <Route path="profile" element={<ProfilePage />} />
           <Route path="crud-list" element={<CrudListPage />} />
           <Route path="functions" element={<FunctionsPage />} />

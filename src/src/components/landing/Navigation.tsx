@@ -1,13 +1,10 @@
 import { Link } from 'react-router';
-import brandLogo from 'src/src/assets/icons/certificate-svgrepo-com.svg';
+import { BrandLogo } from '../atoms';
 
 export const Navigation = () => {
   return (
     <header className="mx-auto flex max-w-7xl items-center p-6">
-      <a href="/" className="flex items-center gap-2">
-        <img src={brandLogo} alt="brand logo" className="h-10" />
-        <h1 className="text-xl font-bold text-gray-50">AppWrite X</h1>
-      </a>
+      <BrandLogo />
       <nav className="flex-1">
         <ul className="flex items-center justify-center gap-4">
           <li>

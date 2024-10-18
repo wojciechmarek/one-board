@@ -1,5 +1,6 @@
 import { Models } from 'appwrite';
 import { useEffect, useState } from 'react';
+import { Outlet } from 'react-router';
 import { account } from '../../../../api/app-write';
 
 type Props = {};
@@ -18,7 +19,7 @@ export const DashboardPage = (props: Props) => {
   return (
     <>
       <pre>{JSON.stringify(session, null, 2)}</pre>
-      <p>hello</p>
+      <Outlet />
     </>
   );
 };
