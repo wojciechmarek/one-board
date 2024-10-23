@@ -1,31 +1,26 @@
-import aiIcon from 'src/src/assets/icons/icons8-ai-64.png';
-import calendarIcon from 'src/src/assets/icons/icons8-calendar-64.png';
-import chartIcon from 'src/src/assets/icons/icons8-chart-64.png';
-import cryptoIcon from 'src/src/assets/icons/icons8-crypto-64.png';
-import moneyIcon from 'src/src/assets/icons/icons8-money-64.png';
+import barsIcon from 'src/src/assets/icons/bars-tile.svg';
+import calendarIcon from 'src/src/assets/icons/calendar-tile.svg';
+import cloudIcon from 'src/src/assets/icons/cloud-tile.svg';
+import mailIcon from 'src/src/assets/icons/mail-tile.svg';
 import SideBarIconLink from '../../atoms/sidebar-icon-link/SideBarIconLink';
 
 const mainMenuItems = [
   {
-    link: '/portfolio',
-    imageUrl: moneyIcon,
+    link: '/mail',
+    imageUrl: mailIcon,
   },
   {
-    link: '/dashboard',
-    imageUrl: aiIcon,
+    link: '/cloud',
+    imageUrl: cloudIcon,
     isActive: true,
   },
   {
-    link: '/dashboard',
+    link: '/calendar',
     imageUrl: calendarIcon,
   },
   {
-    link: '/dashboard',
-    imageUrl: chartIcon,
-  },
-  {
-    link: '/dashboard',
-    imageUrl: cryptoIcon,
+    link: '/investments',
+    imageUrl: barsIcon,
   },
 ];
 

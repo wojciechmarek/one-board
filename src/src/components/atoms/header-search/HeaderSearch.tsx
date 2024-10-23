@@ -8,7 +8,7 @@ export const HeaderSearch = () => {
         <div className="mx-1 h-5 w-5">
           <MagnifyingGlassIcon />
         </div>
-        <p className="text-xs font-normal text-blue-gray-200">What are you searching for?</p>
+        <p className="text-sm font-normal text-blue-gray-200">Search for a message</p>
       </div>
     </Button>
   );

@@ -16,8 +16,8 @@ export const SideBarNavigationLink = (props: SideBarNavigationLinkProps) => {
       <Button className="flex w-full flex-row items-center justify-between gap-3 bg-transparent p-0 px-3 py-2 normal-case">
         {/* <img alt={'link to ' + link} src={imageUrl} className="h-8 w-8 place-self-center" /> */}
         <div className="flex flex-row items-center gap-3">
-          <div className="h-5 w-5">{icon}</div>
-          <p className="text-xs font-bold text-blue-gray-100">{name}</p>
+          <div className="h-6 w-6">{icon}</div>
+          <p className="text-sm font-bold text-blue-gray-100">{name}</p>
         </div>
 
         <Chip variant="gradient" size="sm" value="12" color="red" />

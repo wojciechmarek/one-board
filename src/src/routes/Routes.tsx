@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
-import { AppLayout, CrudListPage, DashboardPage, FunctionsPage, ProfilePage } from './app';
+import { AppLayout, MailPage } from './app';
 import { AuthLayout, LoginPage, RegisterPage } from './auth';
 import { LandingPage } from './landing/LandingPage';
 
@@ -15,18 +15,23 @@ const AppRoutes = () => {
         </Route>
 
         <Route element={<AppLayout />}>
-          <Route path="portfolio" element={<DashboardPage />}>
-            <Route index element={<p>overview</p>} />
-            <Route path="assets" element={<p>assets</p>} />
-            <Route path="transactions" element={<p>transactions</p>} />
-            <Route path="history" element={<p>history</p>} />
-            <Route path="settings" element={<p>settings</p>} />
+          <Route path="mail" element={<MailPage />}>
+            <Route path="inbox" element={<p>inbox</p>} />
+            <Route path="starred" element={<p>starred</p>} />
+            <Route path="sent" element={<p>sent</p>} />
+            <Route path="spam" element={<p>spam</p>} />
+            <Route path="trash" element={<p>trash</p>} />
           </Route>
-          <Route path="profile" element={<ProfilePage />} />
-          <Route path="crud-list" element={<CrudListPage />} />
-          <Route path="functions" element={<FunctionsPage />} />
-          {/* <Route path=":city" element={<City />} />
-            <Route path="trending" element={<Trending />} /> */}
+          <Route path="cloud" element={<MailPage />}>
+            <Route path="browse" element={<p>browse</p>} />
+            <Route path="starred" element={<p>starred</p>} />
+            <Route path="shared" element={<p>shared</p>} />
+            <Route path="trash" element={<p>trash</p>} />
+          </Route>
+          <Route path="calendar" element={<MailPage />}>
+            <Route path="overview" element={<p>overview</p>} />
+            <Route path="events" element={<p>events</p>} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,12 +1,18 @@
-import { CircleStackIcon, ClockIcon, Cog6ToothIcon, ListBulletIcon, Squares2X2Icon } from '@heroicons/react/24/outline';
+import {
+  EnvelopeIcon,
+  PaperAirplaneIcon,
+  ShieldExclamationIcon,
+  StarIcon,
+  TrashIcon,
+} from '@heroicons/react/24/outline';
 import { SideBarNavigationLink } from '../../atoms/sidebar-navigation-link/SideBarNavigationLink';
 
 const secondaryMenuItems = [
-  { name: 'Overview', icon: <Squares2X2Icon className="stroke-white" />, link: '/portfolio' },
-  { name: 'Assets', icon: <CircleStackIcon className="stroke-white" />, link: 'portfolio/assets' },
-  { name: 'Transactions', icon: <ListBulletIcon className="stroke-white" />, link: 'portfolio/transactions' },
-  { name: 'History', icon: <ClockIcon className="stroke-white" />, link: 'portfolio/history' },
-  { name: 'Settings', icon: <Cog6ToothIcon className="stroke-white" />, link: 'portfolio/settings' },
+  { name: 'Inbox', icon: <EnvelopeIcon className="stroke-white" />, link: 'mail/inbox' },
+  { name: 'Starred', icon: <StarIcon className="stroke-white" />, link: 'mail/starred' },
+  { name: 'Spam', icon: <ShieldExclamationIcon className="stroke-white" />, link: 'mail/starred' },
+  { name: 'Sent', icon: <PaperAirplaneIcon className="stroke-white" />, link: 'mail/sent' },
+  { name: 'Trash', icon: <TrashIcon className="stroke-white" />, link: 'mail/trash' },
 ];
 
 export const SideBarNavigationList = () => {

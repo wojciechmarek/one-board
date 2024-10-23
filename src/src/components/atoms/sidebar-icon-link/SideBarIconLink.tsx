@@ -17,7 +17,7 @@ const SideBarIconLink = (props: SideBarIconLinkProps) => {
       className={`grid h-16 border-b-2 border-b-[#252332] hover:cursor-pointer hover:bg-[#252332] ${clsx(isActive && 'border-l-4 border-r-white')}`}
     >
       <Button className="rounded-none bg-transparent p-0">
-        <img alt={'link to ' + link} src={imageUrl} className="h-8 w-8 place-self-center" />
+        <img alt={'link to ' + link} src={imageUrl} className="h-6 w-6 place-self-center" />
       </Button>
     </Link>
   );

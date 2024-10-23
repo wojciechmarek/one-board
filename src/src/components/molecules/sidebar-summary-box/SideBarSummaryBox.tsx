@@ -3,16 +3,18 @@ import { Progress } from '@material-tailwind/react';
 
 export const SideBarSummaryBox = () => {
   return (
-    <div className="mx-6 mb-6 h-36 rounded-2xl bg-gradient-to-tr from-[#6e4fe4] to-[#ac73ec] p-4">
-      <h6 className="text-xs font-bold text-white">Cloud storage</h6>
-      <Progress value={50} color="amber" size="sm" className="mt-2" />
-      <h6 className="mt-2 text-[0.5rem] font-bold text-white">2.4 GiB of 5 GiB used</h6>
-      <div className="mt-2 flex flex-row items-center gap-2 rounded-xl bg-white px-2 py-3">
+    <div className="mx-6 mb-6 flex h-36 flex-col justify-between rounded-2xl bg-gradient-to-br from-[#F72585] to-[#4895EF] p-3">
+      <div>
+        <h6 className="text-sm font-bold text-white">Email messages</h6>
+        <Progress value={50} color="amber" size="sm" className="mt-2" />
+        <h6 className="mt-2 text-[0.6rem] font-bold text-white">213 read out of 345 total</h6>
+      </div>
+      <div className="mt-2 flex flex-row items-center gap-2 rounded-xl bg-white p-2">
         <div className="h-6 w-6">
           <CheckCircleIcon className="stroke-black" />
         </div>
         <div>
-          <p className="text-xs font-bold text-black">File syncing</p>
+          <p className="text-xs font-bold text-black">Inbox synched</p>
           <p className="text-xs text-blue-gray-800">Up to date</p>
         </div>
       </div>
