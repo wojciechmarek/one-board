@@ -32,6 +32,10 @@ const AppRoutes = () => {
             <Route path="overview" element={<p>overview</p>} />
             <Route path="events" element={<p>events</p>} />
           </Route>
+          <Route path="investments" element={<MailPage />}>
+            <Route path="dashboard" element={<p>dashboard</p>} />
+            <Route path="top-trending" element={<p>top-trending</p>} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

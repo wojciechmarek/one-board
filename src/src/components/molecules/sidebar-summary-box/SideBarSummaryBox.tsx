@@ -11,7 +11,7 @@ export const SideBarSummaryBox = () => {
       </div>
       <div className="mt-2 flex flex-row items-center gap-2 rounded-xl bg-white p-2">
         <div className="h-6 w-6">
-          <CheckCircleIcon className="stroke-black" />
+          <CheckCircleIcon className="stroke-green-600" />
         </div>
         <div>
           <p className="text-xs font-bold text-black">Inbox synched</p>
