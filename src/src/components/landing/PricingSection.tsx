@@ -22,7 +22,7 @@ export const PricingSection = () => {
               ))}
             </ul>
             <a
-              className="mt-12 rounded-full bg-gradient-to-r from-red-500 to-blue-900 px-9 py-4 font-bold"
+              className="mt-12 rounded-full bg-gradient-to-r from-[#F72585] to-[#4895EF] px-9 py-4 font-bold"
               href="/sign-in"
             >
               Get started
