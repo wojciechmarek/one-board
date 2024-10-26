@@ -8,9 +8,9 @@ import javascript from 'highlight.js/lib/languages/javascript';
 // Then register the languages you need
 hljs.registerLanguage('javascript', javascript);
 
-type Props = {};
 
-export const ProfilePage = (props: Props) => {
+
+export const ProfilePage = () => {
   const [profile, setProfile] = useState<Models.User<Models.Preferences>>();
 
   useEffect(() => {

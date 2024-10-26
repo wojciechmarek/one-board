@@ -1,5 +1,5 @@
-type Props = {};
 
-export const FunctionsPage = (props: Props) => {
+
+export const FunctionsPage = () => {
   return <div>FunctionsPage</div>;
 };
