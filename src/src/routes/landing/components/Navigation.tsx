@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { BrandLogo } from '../atoms';
+import { BrandLogo } from 'src/src/components/atoms';
 
 export const Navigation = () => {
   return (

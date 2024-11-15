@@ -29,7 +29,7 @@ const mainMenuItems = [
   },
 ];
 
-export const SideBarIconsNavigationList = () => {
+export const SidebarBoardSelector = () => {
   return (
     <Menu>
       <MenuHandler>

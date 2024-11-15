@@ -15,7 +15,7 @@ const secondaryMenuItems = [
   { name: 'Trash', icon: <TrashIcon className="stroke-white" />, link: 'mail/trash' },
 ];
 
-export const SideBarNavigationList = () => {
+export const SidebarNavigationList = () => {
   return (
     <nav className="mt-3 flex flex-grow flex-col gap-1 px-2">
       {secondaryMenuItems.map((item) => (

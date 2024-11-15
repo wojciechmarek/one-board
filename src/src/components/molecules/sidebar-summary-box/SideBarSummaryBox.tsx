@@ -1,7 +1,7 @@
 import { CheckCircleIcon } from '@heroicons/react/24/outline';
 import { Progress } from '@material-tailwind/react';
 
-export const SideBarSummaryBox = () => {
+export const SidebarSummaryBox = () => {
   return (
     <div className="mx-6 mb-6 flex h-36 flex-col justify-between rounded-2xl bg-gradient-to-br from-[#F72585] to-[#4895EF] p-3">
       <div>

@@ -5,7 +5,7 @@ import {
   HomeSection,
   Navigation,
   PricingSection,
-} from 'src/src/components/landing';
+} from 'src/src/routes/landing/components';
 
 export const LandingPage = () => {
   return (
